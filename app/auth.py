@@ -46,3 +46,9 @@ def is_token_expired(token: str) -> bool:
 def validate_token(token: str) -> None:
     if is_token_expired(token):
         raise HTTPException(status_code=401, detail="Token has expired")
+    
+
+access_token = create_access_token(
+    data={"sub": "user@example.com"}, 
+    expires_delta=timedelta(minutes=15)
+)

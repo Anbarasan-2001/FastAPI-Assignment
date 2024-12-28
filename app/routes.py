@@ -126,7 +126,8 @@ async def refresh_access_token(refresh_token: str):
     try:
         user_email       = decode_token(refresh_token)
         new_access_token = create_access_token(
-            data={"sub": user_email}, expires_delta=timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
+            data={"sub": user_email}, 
+            expires_delta=timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
         )
         return {"access_token": new_access_token, "token_type": "bearer"}
     except HTTPException:
