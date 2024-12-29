@@ -1,0 +1,16 @@
+# Environment variables
+.env
+
+# Python compiled files
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs
+*.log
+
+# VSCode settings
+.vscode/
+
+# Other temporary files
+*.swp
